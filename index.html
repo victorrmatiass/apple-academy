@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Victor Matias</title>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="public/fonts/fonts.css" />
+  </head>
+  <body>
+    <section class="background">
+      <audio class="popSound" autoplay="autoplay" controls="controls">
+        <source src="public/sounds/pop-up.mp3" type="audio/mp3" />
+      </audio>
+      <audio class="wrongSound" autoplay="autoplay" controls="controls">
+        <source src="public/sounds/wrong-answer.mp3" type="audio/mp3" />
+      </audio>
+
+      <div class="widthContainer">
+        <h1 class="apresentationTitle">VÍDEO DE APRESENTAÇÃO</h1>
+        <div class="presentationVideoArea">
+          <video controls>
+            <source
+              src="public/videos/presentation-video.mp4"
+              type="video/mp4"
+            />
+            <object>
+              <embed
+                src="public/videos/presentation-video.mp4"
+                type="application/x-shockwave-flash"
+                allowfullscreen="false"
+                allowscriptaccess="always"
+              />
+            </object>
+          </video>
+        </div>
+        <button
+          onmouseenter="playPopSound()"
+          onclick="startQuiz()"
+          class="quizStartCTA"
+        >
+          Iniciar Quiz
+        </button>
+      </div>
+      <div class="quizContainer">
+        <div class="container-inner">
+          <div class="content">
+            <p class="question"></p>
+          </div>
+          <div class="buttons">
+            <button type="button" onclick="attQuestion()" class="correct">
+              Confirm
+            </button>
+            <button
+              type="button"
+              onclick="moveQuestion"
+              onmouseover="moveQuestion()"
+              class="wrong"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="victoryContainer">
+        <audio class="victorySound" autoplay="autoplay" controls="controls">
+          <source src="public/sounds/victory.mp3" type="audio/mp3" />
+        </audio>
+        <p class="victoryText">PARABÉNS, VOCÊ VENCEU!!!</p>
+        <p class="subtitle">Agora você conhece um pouco mais sobre Victor!</p>
+        <button onclick="goToHome()" class="quizStartCTA">RETORNAR</button>
+    </div>
+    </section>
+  </body>
+</html>
